@@ -35,3 +35,9 @@ Then open `http://localhost:8080`.
 - Favicons and crawler files: `docs/`
 
 There is no build step for this repository.
+
+## Product messaging
+
+Keep this site aligned with the main [Diraigent repository](https://github.com/diraigent/diraigent), especially its README, `apps/web/src/app/features/landing/` and `apps/web/src/index.html`. This repository publishes the standalone public website; deploying the web app on another host does not update GitHub Pages.
+
+The current description covers shared workspaces, provider choice, direct task execution, human review and optional Orchestra-owned content storage. Avoid advertising retired playbook pipelines or promising that external AI providers keep all data on the host.

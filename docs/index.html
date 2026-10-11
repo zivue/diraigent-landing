@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>diraigent — your codebase deserves a system, not a suggestion</title>
-  <meta name="description" content="A self-hosted software factory with enforced pipelines, goal decomposition, and human-in-the-loop review. Multi-agent orchestration without the chaos.">
+  <title>diraigent — coordinate your agents, build together</title>
+  <meta name="description" content="A self-hosted platform for AI-assisted software development with shared workspaces, coding agents, human review and durable Orchestra workers. Access projects from web and iOS.">
   <meta name="author" content="Zivue AS">
   <meta name="theme-color" content="#1e1e2e">
 
@@ -14,21 +14,21 @@
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="diraigent">
-  <meta property="og:title" content="diraigent — your codebase deserves a system, not a suggestion">
-  <meta property="og:description" content="A self-hosted software factory with enforced pipelines, goal decomposition, and human-in-the-loop review. Multi-agent orchestration without the chaos.">
+  <meta property="og:title" content="diraigent — coordinate your agents, build together">
+  <meta property="og:description" content="A self-hosted platform for AI-assisted software development with shared workspaces, coding agents, human review and durable Orchestra workers. Access projects from web and iOS.">
   <meta property="og:url" content="https://www.diraigent.com/">
   <meta property="og:locale" content="en_US">
   <meta property="og:image" content="https://www.diraigent.com/assets/images/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="diraigent — your codebase deserves a system, not a suggestion">
+  <meta property="og:image:alt" content="diraigent — coordinate your agents, build together">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="diraigent — your codebase deserves a system, not a suggestion">
-  <meta name="twitter:description" content="A self-hosted software factory with enforced pipelines, goal decomposition, and human-in-the-loop review. Multi-agent orchestration without the chaos.">
+  <meta name="twitter:title" content="diraigent — coordinate your agents, build together">
+  <meta name="twitter:description" content="A self-hosted platform for AI-assisted software development with shared workspaces, coding agents, human review and durable Orchestra workers. Access projects from web and iOS.">
   <meta name="twitter:image" content="https://www.diraigent.com/assets/images/og-image.png">
-  <meta name="twitter:image:alt" content="diraigent — your codebase deserves a system, not a suggestion">
+  <meta name="twitter:image:alt" content="diraigent — coordinate your agents, build together">
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -44,7 +44,7 @@
     "@type": "SoftwareApplication",
     "name": "diraigent",
     "url": "https://www.diraigent.com",
-    "description": "A self-hosted software factory with enforced pipelines, goal decomposition, and human-in-the-loop review. Multi-agent orchestration without the chaos.",
+    "description": "A self-hosted platform for AI-assisted software development with shared workspaces, coding agents, human review and durable Orchestra workers. Access projects from web and iOS.",
     "applicationCategory": "DeveloperApplication",
     "operatingSystem": "Linux, macOS, Windows",
     "author": {
@@ -66,36 +66,45 @@
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-
 <div class="page">
 
   <!-- Header -->
   <header class="header">
-    <div class="header-brand">
-      <img src="assets/images/logo-diraigent.svg" alt="diraigent" class="header-logo">
-      <span class="header-name">diraigent</span>
+    <div class="header-top">
+      <div class="header-brand">
+        <img src="assets/images/logo-diraigent.svg" alt="diraigent" class="header-logo">
+        <span class="header-name">diraigent</span>
+      </div>
+      <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="menu-bar"></span>
+        <span class="menu-bar"></span>
+        <span class="menu-bar"></span>
+      </button>
     </div>
-    <nav class="header-nav">
+    <nav class="header-nav" id="header-nav">
       <a href="#features">features</a>
       <a href="#how-it-works">how it works</a>
-      <a href="#compare">compare</a>
+      <a href="#architecture">architecture</a>
       <a href="#get-started">get started</a>
       <a href="https://github.com/diraigent/diraigent" target="_blank" rel="noopener">github</a>
+      <a href="https://discord.gg/tfaYmvTw" target="_blank" rel="noopener">discord</a>
+      <a href="https://web.diraigent.com/dashboard" class="nav-login">open app</a>
     </nav>
   </header>
 
   <!-- Hero -->
   <section class="hero">
-    <h1>your codebase deserves a system,<br>not a suggestion</h1>
+    <h1>coordinate your agents.<br>build together.</h1>
     <p class="hero-sub">
-      a self-hosted software factory &mdash; define goals, agents decompose and execute them
-      through enforced pipelines, with humans in the loop where it matters.
+      a self-hosted platform for AI-assisted software development.
+      Plan work, run coding agents in isolated worktrees, and review results
+      together from the web or iOS app.
     </p>
     <div class="hero-tags">
       <span class="tag">self-hosted</span>
-      <span class="tag">rust-powered</span>
-      <span class="tag">pipeline-enforced</span>
-      <span class="tag">multi-agent</span>
+      <span class="tag">shared workspaces</span>
+      <span class="tag">task orchestration</span>
+      <span class="tag">your choice of agent</span>
       <span class="tag">human-in-the-loop</span>
     </div>
     <div class="hero-cta">
@@ -110,44 +119,39 @@
     </div>
   </section>
 
-  <!-- Problem Statement -->
+  <!-- Shared workflow -->
   <section class="problem" id="problem">
-    <h2 class="section-title">the ai coding landscape is broken</h2>
-
+    <h2 class="section-title">one workspace for the whole project</h2>
     <div class="arch-grid arch-grid-3">
       <div class="arch-card arch-card--red">
-        <h3>black-box saas</h3>
-        <p>Cloud-hosted agents that do everything behind closed doors. You can&rsquo;t see the logs, can&rsquo;t audit the process, can&rsquo;t self-host. Your code leaves your network.</p>
+        <h3>plan with context</h3>
+        <p>Keep tasks, acceptance criteria, decisions and project knowledge together. Give each task the context needed to start work.</p>
       </div>
-
       <div class="arch-card arch-card--yellow">
-        <h3>single-agent copilots</h3>
-        <p>IDE plugins that help one developer at a time. Great for autocomplete, but they don&rsquo;t orchestrate work across a team, manage releases, or enforce quality gates.</p>
+        <h3>choose your agents</h3>
+        <p>Use OpenCode by default, or configure Codex or Claude Code. Repository instructions and skills guide the selected agent.</p>
       </div>
-
       <div class="arch-card arch-card--peach">
-        <h3>unstructured swarms</h3>
-        <p>Throw agents at code and hope for the best. No enforced workflows, no state machines, no authority controls. When things go wrong, there&rsquo;s no trail to follow.</p>
+        <h3>work together</h3>
+        <p>Share projects with viewers, editors and managers. Review task results and give demo users read-only access.</p>
       </div>
     </div>
-
-    <p class="problem-punchline">diraigent is none of these.</p>
   </section>
 
   <!-- Core Differentiators -->
   <section class="differentiators" id="features">
-    <h2 class="section-title">what makes diraigent different</h2>
+    <h2 class="section-title">from task to delivery</h2>
 
     <div class="differentiator">
       <div class="diff-text">
-        <span class="tag tag--mauve">pipelines</span>
-        <h3>pipelines that agents cannot skip</h3>
-        <p>Define multi-step playbooks with a validated state machine. Each step has entry conditions, exit criteria, and quality gates. Agents follow the pipeline exactly &mdash; no improvising, no shortcuts. If a step fails verification, the agent goes back.</p>
+        <span class="tag tag--mauve">execution</span>
+        <h3>tasks with clear ownership and review</h3>
+        <p>Agents claim ready tasks, work in isolated Git worktrees, and report results. Use repository guidance and skills for the work, and request human review when needed. Orchestra coordinates execution and delivery.</p>
       </div>
       <div class="diff-image">
         <picture>
-          <source srcset="assets/images/screenshot-playbook.webp" type="image/webp">
-          <img src="assets/images/screenshot-playbook.png" alt="Playbook pipeline view" width="1280" height="800" loading="lazy">
+          <source srcset="assets/images/screenshot-goals.webp" type="image/webp">
+          <img src="assets/images/screenshot-goals.png" alt="Task board" width="1280" height="800" loading="lazy">
         </picture>
       </div>
     </div>
@@ -155,8 +159,8 @@
     <div class="differentiator">
       <div class="diff-text">
         <span class="tag tag--blue">goals</span>
-        <h3>goals decompose into parallel tasks</h3>
-        <p>Describe a high-level goal. Diraigent breaks it into concrete tasks, assigns playbooks, and dispatches agents in parallel. Epics, features, milestones &mdash; all visible on a kanban board with drag-and-drop ordering.</p>
+        <h3>turn goals into actionable tasks</h3>
+        <p>Describe a goal and use project chat to plan concrete tasks with acceptance criteria. Track epics, features and milestones on the board, then make tasks ready for authorized workers.</p>
       </div>
       <div class="diff-image">
         <picture>
@@ -184,7 +188,7 @@
       <div class="diff-text">
         <span class="tag tag--yellow">knowledge</span>
         <h3>your project gets smarter over time</h3>
-        <p>Knowledge entries, architectural decisions, and observations accumulate as agents work. The next task starts with everything the last one learned. This isn&rsquo;t chat history &mdash; it&rsquo;s structured project memory that persists across agents and sessions.</p>
+        <p>Knowledge entries, architectural decisions, and observations accumulate as agents work. Keep relevant context available for later tasks, agents and sessions.</p>
       </div>
       <div class="diff-image">
         <picture>
@@ -196,110 +200,34 @@
 
     <div class="diff-callout diff-callout--teal">
       <h3>different agents, different permissions</h3>
-      <p>Not every agent should have the same power. Define roles with scoped authority &mdash; one agent writes code, another reviews, another handles releases. Each operates within its granted permissions.</p>
+      <p>Define agent roles with scoped authority for execution, review and project management. Human project permissions are managed separately, with viewer, editor and manager access.</p>
     </div>
 
     <div class="diff-callout diff-callout--peach">
       <h3>releases are a first-class concept</h3>
-      <p>Built-in release workflows with configurable merge strategies. Agents don&rsquo;t just write code &mdash; they shepherd it through branch creation, merge resolution, and release tagging. The full lifecycle, not just the diff.</p>
+      <p>Choose a project Git delivery strategy for merging completed work or retaining branches. Release tools support merge strategies and tagging when you are ready to ship.</p>
     </div>
   </section>
 
-  <!-- Comparison Matrix -->
-  <section class="comparison" id="compare">
-    <h2 class="section-title">how diraigent compares</h2>
-    <p class="section-intro">no agent tool does everything. here&rsquo;s where diraigent sits.</p>
-
-    <div class="compare-table-wrap">
-      <table class="compare-table">
-        <thead>
-          <tr>
-            <th>Capability</th>
-            <th>IDE Copilots</th>
-            <th>SaaS Agents</th>
-            <th>Open-Source Agents</th>
-            <th>Agent Orchestrators</th>
-            <th class="cmp-highlight">diraigent</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Multi-agent parallel execution</td>
-            <td><span class="cmp-no">&mdash;</span></td>
-            <td><span class="cmp-yes">&#10003;</span></td>
-            <td><span class="cmp-no">&mdash;</span></td>
-            <td><span class="cmp-yes">&#10003;</span></td>
-            <td class="cmp-highlight"><span class="cmp-yes">&#10003;</span></td>
-          </tr>
-          <tr>
-            <td>Enforced pipeline state machine</td>
-            <td><span class="cmp-no">&mdash;</span></td>
-            <td><span class="cmp-no">&mdash;</span></td>
-            <td><span class="cmp-no">&mdash;</span></td>
-            <td><span class="cmp-no">&mdash;</span></td>
-            <td class="cmp-highlight"><span class="cmp-yes">&#10003;</span></td>
-          </tr>
-          <tr>
-            <td>Goal-to-task decomposition</td>
-            <td><span class="cmp-no">&mdash;</span></td>
-            <td><span class="cmp-partial">~</span></td>
-            <td><span class="cmp-no">&mdash;</span></td>
-            <td><span class="cmp-no">&mdash;</span></td>
-            <td class="cmp-highlight"><span class="cmp-yes">&#10003;</span></td>
-          </tr>
-          <tr>
-            <td>Persistent project knowledge</td>
-            <td><span class="cmp-no">&mdash;</span></td>
-            <td><span class="cmp-no">&mdash;</span></td>
-            <td><span class="cmp-no">&mdash;</span></td>
-            <td><span class="cmp-no">&mdash;</span></td>
-            <td class="cmp-highlight"><span class="cmp-yes">&#10003;</span></td>
-          </tr>
-          <tr>
-            <td>Human-in-the-loop review queue</td>
-            <td><span class="cmp-no">&mdash;</span></td>
-            <td><span class="cmp-no">&mdash;</span></td>
-            <td><span class="cmp-no">&mdash;</span></td>
-            <td><span class="cmp-no">&mdash;</span></td>
-            <td class="cmp-highlight"><span class="cmp-yes">&#10003;</span></td>
-          </tr>
-          <tr>
-            <td>Role-based agent authority</td>
-            <td><span class="cmp-no">&mdash;</span></td>
-            <td><span class="cmp-no">&mdash;</span></td>
-            <td><span class="cmp-no">&mdash;</span></td>
-            <td><span class="cmp-no">&mdash;</span></td>
-            <td class="cmp-highlight"><span class="cmp-yes">&#10003;</span></td>
-          </tr>
-          <tr>
-            <td>Release management</td>
-            <td><span class="cmp-no">&mdash;</span></td>
-            <td><span class="cmp-partial">~</span></td>
-            <td><span class="cmp-no">&mdash;</span></td>
-            <td><span class="cmp-no">&mdash;</span></td>
-            <td class="cmp-highlight"><span class="cmp-yes">&#10003;</span></td>
-          </tr>
-          <tr>
-            <td>Self-hosted / data sovereignty</td>
-            <td><span class="cmp-no">&mdash;</span></td>
-            <td><span class="cmp-no">&mdash;</span></td>
-            <td><span class="cmp-yes">&#10003;</span></td>
-            <td><span class="cmp-yes">&#10003;</span></td>
-            <td class="cmp-highlight"><span class="cmp-yes">&#10003;</span></td>
-          </tr>
-          <tr>
-            <td>Full audit trail</td>
-            <td><span class="cmp-no">&mdash;</span></td>
-            <td><span class="cmp-no">&mdash;</span></td>
-            <td><span class="cmp-partial">~</span></td>
-            <td><span class="cmp-partial">~</span></td>
-            <td class="cmp-highlight"><span class="cmp-yes">&#10003;</span></td>
-          </tr>
-        </tbody>
-      </table>
+  <!-- Architecture -->
+  <section class="comparison" id="architecture">
+    <h2 class="section-title">a lightweight control plane, durable workers</h2>
+    <p class="section-intro">keep coordination central and detailed project content with your Orchestra.</p>
+    <div class="arch-grid arch-grid-3">
+      <div class="arch-card">
+        <h3>api and shared state</h3>
+        <p>The API owns sign-in, permissions and task coordination. PostgreSQL keeps shared state and references to content stored on the assigned worker.</p>
+      </div>
+      <div class="arch-card">
+        <h3>Orchestra on your machine</h3>
+        <p>Run Orchestra on a host or in a container. It manages repositories, task worktrees and execution. Enable full storage to keep detailed project content and content search on the worker.</p>
+      </div>
+      <div class="arch-card">
+        <h3>web and iOS</h3>
+        <p>Manage work and chat through the authenticated API. Project permissions apply to both clients; workspace and access management are available on the web.</p>
+      </div>
     </div>
-
-    <p class="compare-note">Comparison based on publicly available information. Categories represent tool archetypes, not specific products.</p>
+    <p class="section-intro">Full storage requires the assigned Orchestra to be online for detailed reads. Persist its data directory and back it up together with the central database.</p>
   </section>
 
   <!-- How It Works -->
@@ -318,8 +246,8 @@
       <div class="step">
         <div class="step-number">2</div>
         <div class="step-body">
-          <h3>diraigent decomposes it</h3>
-          <p>The system breaks your goal into concrete tasks, selects playbooks, and queues work for agents.</p>
+          <h3>plan concrete tasks</h3>
+          <p>Use project chat to refine the work into tasks. Add acceptance criteria and make tasks ready when they can be executed.</p>
         </div>
       </div>
 
@@ -356,50 +284,51 @@
     <div class="arch-grid arch-grid-3">
       <div class="arch-card">
         <h3>rust backend</h3>
-        <p>Compiled, type-safe, no garbage collector pauses. The API and orchestrator handle hundreds of concurrent agents.</p>
+        <p>The Rust API coordinates shared state and authorized content access. Orchestra handles tools, repositories and task execution on its host.</p>
       </div>
 
       <div class="arch-card">
         <h3>self-hosted</h3>
-        <p>Runs on your infrastructure. Your code, your data, your network. Nothing leaves your environment.</p>
+        <p>Host Diraigent and its durable storage on your infrastructure. Your chosen AI provider and MCP tools determine where prompts and tool data are processed.</p>
       </div>
 
       <div class="arch-card">
         <h3>plain docker setup</h3>
-        <p>One docker-compose file. No Kubernetes required, no cloud dependencies, no vendor lock-in.</p>
+        <p>Use Docker Compose for the API and web app, and run Orchestra in a container or directly on a development machine with the tools your project needs.</p>
       </div>
     </div>
   </section>
 
   <!-- Get Started -->
   <section class="get-started" id="get-started">
-    <h2 class="section-title">get started in minutes</h2>
+    <h2 class="section-title">run on your infrastructure</h2>
     <p class="section-intro">
       run diraigent on your own infrastructure.<br>
-      requires currently <a href="https://docs.anthropic.com/en/docs/claude-code" target="_blank" rel="noopener">claude code</a> &mdash;
-      the orchestra spawns claude code workers in isolated git worktrees for each task.
+      uses OpenCode by default, with Codex and Claude Code optional.
+      Orchestra runs the selected agent in an isolated git worktree for each task.
     </p>
     <div class="hero-cta">
       <a href="https://github.com/diraigent/diraigent" target="_blank" rel="noopener" class="btn btn-primary">view on github</a>
+      <a href="https://discord.gg/tfaYmvTw" target="_blank" rel="noopener" class="btn btn-secondary">join discord</a>
     </div>
+    <p class="section-intro">The legacy startup helper below requires macOS and Claude Code credentials in the Keychain. Configure OpenCode provider authentication separately; see the repository documentation for worker settings and durable storage.</p>
     <div class="get-started-steps">
       <pre><code>
-curl -LO https://github.com/diraigent/diraigent/blob/main/startup/docker-compose.yml
-curl -LO https://github.com/diraigent/diraigent/blob/main/startup/start.sh
-curl -LO https://github.com/diraigent/diraigent/blob/main/startup/.env.example
+curl -LO https://raw.githubusercontent.com/diraigent/diraigent/main/startup/docker-compose.yml
+curl -LO https://raw.githubusercontent.com/diraigent/diraigent/main/startup/start.sh
+curl -LO https://raw.githubusercontent.com/diraigent/diraigent/main/startup/.env.example
 cp .env.example .env    # edit .env for your setup
 chmod +x start.sh
-./start.sh              # registers agent, seeds playbooks, starts everything
+./start.sh              # registers agent and starts everything
       </code></pre>
     </div>
 
     <h3 class="section-subtitle">after startup</h3>
     <ol class="after-startup-steps">
-      <li><strong>create a project</strong> &mdash; point it at your git repo (must have a main branch)</li>
-      <li><strong>chat with the assistant</strong> &mdash; see if claude answers</li>
-      <li><strong>clone a playbook</strong> &mdash; pick one of the defaults and clone it into your project</li>
-      <li><strong>create a task</strong> &mdash; attach the playbook, fill in spec and acceptance criteria</li>
-      <li>the orchestra picks it up and starts working</li>
+      <li><strong>create a project</strong> &mdash; point it at your git repo and its default branch</li>
+      <li><strong>chat with the assistant</strong> &mdash; verify the configured agent responds</li>
+      <li><strong>create a task</strong> &mdash; fill in spec and acceptance criteria</li>
+      <li><strong>make the task ready</strong> &mdash; an authorized, connected Orchestra picks it up</li>
     </ol>
 
     <details>
@@ -420,12 +349,25 @@ chmod +x start.sh
       <span>diraigent</span>
     </div>
     <p class="footer-copy">
-      built by <a href="https://zivue.com">zivue</a> &middot; <a href="https://github.com/diraigent/diraigent" target="_blank" rel="noopener">github</a>
+      built by <a href="https://zivue.com">zivue</a> &middot; <a href="https://github.com/diraigent/diraigent" target="_blank" rel="noopener">github</a> &middot; <a href="https://discord.gg/tfaYmvTw" target="_blank" rel="noopener">discord</a>
     </p>
-    <p class="footer-tagline">built with rust. powered by claude code.</p>
+    <p class="footer-tagline">built with rust. runs your chosen agent.</p>
   </footer>
 
 </div>
 
+<script>
+const toggle = document.getElementById('menu-toggle');
+const navigation = document.getElementById('header-nav');
+toggle.addEventListener('click', () => {
+  const open = toggle.getAttribute('aria-expanded') !== 'true';
+  toggle.setAttribute('aria-expanded', String(open));
+  navigation.classList.toggle('open', open);
+});
+navigation.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+  toggle.setAttribute('aria-expanded', 'false');
+  navigation.classList.remove('open');
+}));
+</script>
 </body>
 </html>
